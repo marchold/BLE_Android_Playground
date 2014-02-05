@@ -27,7 +27,20 @@ public class GattAttributes {
     public static String TI_SENSOR_TAG_BarometricPressure_Configuration_UDID= "f000aa42-0451-4000-b000-000000000000";
     public static String TI_SENSOR_TAG_BarometricPressure_Calibration_UDID  = "f000aa43-0451-4000-b000-000000000000";
 
-    public static String TI_SENSOR_TAG_Gyroscope_Service_UDID = "f000aa50-0451-4000-b000-000000000000";
+    public static String TI_SENSOR_TAG_Gyroscope_Service_UDID       = "f000aa50-0451-4000-b000-000000000000";
+    public static String TI_SENSOR_TAG_Gyroscope_Data_UDID          = "f000aa51-0451-4000-b000-000000000000";
+    public static String TI_SENSOR_TAG_Gyroscope_Configuration_UDID = "f000aa52-0451-4000-b000-000000000000";
+
+    public static String TI_SENSOR_TAG_SimpleKey_Service_UDID       = "0000ffe0-0000-1000-8000-00805f9b34fb";
+    public static String TI_SENSOR_TAG_SimpleKey_Data_UDID          = "0000ffe1-0000-1000-8000-00805f9b34fb";
+
+    public static String TI_SENSOR_TAG_Test_Service_UDID       = "0000aa60-0000-1000-8000-00805f9b34fb";
+    public static String TI_SENSOR_TAG_Test_Data_UDID          = "0000aa61-0000-1000-8000-00805f9b34fb";
+    public static String TI_SENSOR_TAG_Test_Configuration_UDID = "0000aa62-0000-1000-8000-00805f9b34fb";
+
+    //TODO: Acceleromenter, Tempiture,
+
+
 
     /*
 
