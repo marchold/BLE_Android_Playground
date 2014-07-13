@@ -78,11 +78,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void run(){
                         Log.i(TAG,"LeScanCallback:: device name ="+device.getName()+"    rssi="+rssi+"      scanRecord"+scanRecord);
-                        if (device.getName().equalsIgnoreCase(DEVICE_TO_CONNECT_TO_NAME)){
-                            Log.i(TAG,"LeScanCallback:: attempting connect");
 
-                            device.connectGatt(getApplicationContext(), true, mGattCallback);
-                        }
                     }
                 });
             }

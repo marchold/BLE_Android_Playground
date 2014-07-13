@@ -1,19 +1,12 @@
 package wheresmy.catglo.com.wheresmy;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
 
-
-public class BleTagList extends Activity {
+public class BleTagListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +14,21 @@ public class BleTagList extends Activity {
         setContentView(R.layout.ble_tag_list_activity);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, new BleTagListFragment())
                     .commit();
         }
     }
 
+    public void showTagDetails(BleTag tag){
+        Bundle args = new Bundle();
+        args.putSerializable("tag",tag);
+        TagDetailsFragment tagDetails = new TagDetailsFragment();
+        tagDetails.setArguments(args);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.container, tagDetails)
+                .addToBackStack(tag.assignedName)
+                .commit();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -46,19 +49,5 @@ public class BleTagList extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
 
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.ble_tag_list_fragment, container, false);
-            return rootView;
-        }
-    }
 }
